@@ -211,7 +211,7 @@ var (
 		flowcontrol.PriorityLevelConfigurationSpec{
 			Type: flowcontrol.PriorityLevelEnablementLimited,
 			Limited: &flowcontrol.LimitedPriorityLevelConfiguration{
-				AssuredConcurrencyShares: 20,
+				AssuredConcurrencyShares: 100,
 				LimitResponse: flowcontrol.LimitResponse{
 					Type: flowcontrol.LimitResponseTypeQueue,
 					Queuing: &flowcontrol.QueuingConfiguration{
@@ -228,7 +228,7 @@ var (
 		flowcontrol.PriorityLevelConfigurationSpec{
 			Type: flowcontrol.PriorityLevelEnablementLimited,
 			Limited: &flowcontrol.LimitedPriorityLevelConfiguration{
-				AssuredConcurrencyShares: 100,
+				AssuredConcurrencyShares: 20,
 				LimitResponse: flowcontrol.LimitResponse{
 					Type: flowcontrol.LimitResponseTypeQueue,
 					Queuing: &flowcontrol.QueuingConfiguration{

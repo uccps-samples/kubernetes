@@ -511,7 +511,7 @@ func newHandlerChain(t *testing.T, handler http.Handler, filter utilflowcontrol.
 
 	handler = WithTimeoutForNonLongRunningRequests(handler, longRunningRequestCheck, requestTimeout)
 	handler = apifilters.WithRequestInfo(handler, requestInfoFactory)
-	handler = WithPanicRecovery(handler, requestInfoFactory)
+	handler = WithPanicRecovery(handler, requestInfoFactory, func() bool { return false })
 	return handler
 }
 

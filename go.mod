@@ -391,6 +391,8 @@ replace (
 	github.com/opencontainers/runc => github.com/opencontainers/runc v1.0.0-rc92
 	github.com/opencontainers/runtime-spec => github.com/opencontainers/runtime-spec v1.0.3-0.20200728170252-4d89ac9fbff6
 	github.com/opencontainers/selinux => github.com/opencontainers/selinux v1.6.0
+	github.com/openshift/api => github.com/openshift/api v0.0.0-20201119144013-9f0856e7c657
+	github.com/openshift/client-go => github.com/openshift/client-go v0.0.0-20201119144744-148025d790a9
 	github.com/pascaldekloe/goe => github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c
 	github.com/pelletier/go-toml => github.com/pelletier/go-toml v1.2.0
 	github.com/peterbourgon/diskv => github.com/peterbourgon/diskv v2.0.1+incompatible

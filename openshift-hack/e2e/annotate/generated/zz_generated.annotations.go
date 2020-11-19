@@ -239,6 +239,8 @@ var annotations = map[string]string{
 
 	"[Top Level] [k8s.io] [sig-node] Pods Extended [k8s.io] Pod Container Status should never report success for a pending container": "should never report success for a pending container [Suite:openshift/conformance/parallel] [Suite:k8s]",
 
+	"[Top Level] [k8s.io] [sig-node] Pods Extended [k8s.io] Pod Container lifecycle should not create extra sandbox if all containers are done": "should not create extra sandbox if all containers are done [Suite:openshift/conformance/parallel] [Suite:k8s]",
+
 	"[Top Level] [k8s.io] [sig-node] Pods Extended [k8s.io] Pods Set QOS Class should be set on Pods with matching resource requests and limits for memory and cpu [Conformance]": "should be set on Pods with matching resource requests and limits for memory and cpu [Conformance] [Suite:openshift/conformance/parallel/minimal] [Suite:k8s]",
 
 	"[Top Level] [k8s.io] [sig-node] PreStop graceful pod terminated should wait until preStop hook completes the process [Flaky]": "graceful pod terminated should wait until preStop hook completes the process [Flaky] [Suite:k8s]",

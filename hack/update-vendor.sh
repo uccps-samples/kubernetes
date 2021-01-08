@@ -191,7 +191,7 @@ for repo in $(kube::util::list_staging_repos); do
   pushd "staging/src/k8s.io/${repo}" >/dev/null 2>&1
     echo "=== propagating to ${repo}" >> "${LOG_FILE}"
     # copy root go.mod, changing module name
-    sed "s#module k8s.io/kubernetes#module k8s.io/${repo}#" < "${KUBE_ROOT}/go.mod" > "${KUBE_ROOT}/staging/src/k8s.io/${repo}/go.mod"
+    cat "${KUBE_ROOT}/go.mod" | grep -v "github.com/openshift/" | sed "s#module k8s.io/kubernetes#module k8s.io/${repo}#" > "${KUBE_ROOT}/staging/src/k8s.io/${repo}/go.mod"
     # remove `require` directives for staging components (will get re-added as needed by `go list`)
     kube::util::list_staging_repos | xargs -n 1 -I {} echo "-droprequire k8s.io/{}"   | xargs -L 100 go mod edit
     # rewrite `replace` directives for staging components to point to peer directories

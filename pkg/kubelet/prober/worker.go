@@ -245,7 +245,7 @@ func (w *worker) doProbe() (keepGoing bool) {
 		// Stop probing for startup once container has started.
 		// we keep it running to make sure it will work for restarted container.
 		if w.probeType == startup {
-			return true
+			return false
 		}
 	} else {
 		// Disable other probes until container has started.

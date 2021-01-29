@@ -333,6 +333,12 @@ func expectContinue(t *testing.T, w *worker, c bool, msg string) {
 	}
 }
 
+func expectStop(t *testing.T, w *worker, c bool, msg string) {
+	if c {
+		t.Errorf("[%s - %s] Expected to stop, but did not", w.probeType, msg)
+	}
+}
+
 func resultsManager(m *manager, probeType probeType) results.Manager {
 	switch probeType {
 	case readiness:
@@ -502,6 +508,6 @@ func TestStartupProbeDisabledByStarted(t *testing.T) {
 	// startupProbe fails, but is disabled
 	m.prober.exec = fakeExecProber{probe.Failure, nil}
 	msg = "Started, probe failure, result success"
-	expectContinue(t, w, w.doProbe(), msg)
+	expectStop(t, w, w.doProbe(), msg)
 	expectResult(t, w, results.Success, msg)
 }

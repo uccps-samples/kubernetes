@@ -1018,6 +1018,21 @@ func (proxier *Proxier) syncProxyRules() {
 		// if the service has any usable endpoints on any node, not just this one.
 		clusterEndpoints, localEndpoints, allLocallyReachableEndpoints, hasEndpoints := proxy.CategorizeEndpoints(allEndpoints, svcInfo, proxier.nodeLabels)
 
+		// Prefer local endpoint for the DNS service.
+		// Fixes <https://bugzilla.redhat.com/show_bug.cgi?id=1919737>.
+		// TODO: Delete this once node-level topology is
+		// implemented and the DNS operator is updated to use it.
+		if svcNameString == "openshift-dns/dns-default:dns" {
+			for _, ep := range clusterEndpoints {
+				if ep.GetIsLocal() {
+					klog.V(4).Infof("Found a local endpoint %q for service %q; preferring the local endpoint and ignoring %d other endpoints", ep.String(), svcNameString, len(clusterEndpoints) - 1)
+					clusterEndpoints = []proxy.Endpoint{ep}
+					allLocallyReachableEndpoints = clusterEndpoints
+					break
+				}
+			}
+		}
+
 		// Generate the per-endpoint chains.
 		for _, ep := range allLocallyReachableEndpoints {
 			epInfo, ok := ep.(*endpointsInfo)

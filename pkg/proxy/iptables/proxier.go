@@ -122,7 +122,11 @@ type serviceInfo struct {
 	localPolicyChainName   utiliptables.Chain
 	firewallChainName      utiliptables.Chain
 	externalChainName      utiliptables.Chain
+
+	localWithFallback bool
 }
+
+const localWithFallbackAnnotation = "traffic-policy.network.alpha.openshift.io/local-with-fallback"
 
 // returns a new proxy.ServicePort which abstracts a serviceInfo
 func newServiceInfo(port *v1.ServicePort, service *v1.Service, baseInfo *proxy.BaseServiceInfo) proxy.ServicePort {
@@ -137,6 +141,14 @@ func newServiceInfo(port *v1.ServicePort, service *v1.Service, baseInfo *proxy.B
 	info.localPolicyChainName = servicePortPolicyLocalChainName(info.nameString, protocol)
 	info.firewallChainName = serviceFirewallChainName(info.nameString, protocol)
 	info.externalChainName = serviceExternalChainName(info.nameString, protocol)
+
+	if _, set := service.Annotations[localWithFallbackAnnotation]; set {
+		if info.ExternalPolicyLocal() {
+			info.localWithFallback = true
+		} else {
+			klog.Warningf("Ignoring annotation %q on Service %s which does not have Local ExternalTrafficPolicy", localWithFallbackAnnotation, svcName)
+		}
+	}
 
 	return info
 }
@@ -1067,6 +1079,10 @@ func (proxier *Proxier) syncProxyRules() {
 			proxier.natRules.Write(args)
 		}
 
+		// If "local-with-fallback" is in effect and there are no local endpoints,
+		// then we will force cluster behavior
+		localWithFallback := svcInfo.localWithFallback && len(localEndpoints) == 0
+
 		// These chains represent the sets of endpoints to use when internal or
 		// external traffic policy is "Cluster" vs "Local".
 		clusterPolicyChain := svcInfo.clusterPolicyChainName
@@ -1079,7 +1095,7 @@ func (proxier *Proxier) syncProxyRules() {
 		if svcInfo.InternalPolicyLocal() {
 			internalPolicyChain = localPolicyChain
 		}
-		if svcInfo.ExternalPolicyLocal() {
+		if svcInfo.ExternalPolicyLocal() && !localWithFallback {
 			externalPolicyChain = localPolicyChain
 		}
 
@@ -1102,7 +1118,7 @@ func (proxier *Proxier) syncProxyRules() {
 		}
 
 		// Declare the localPolicyChain if needed.
-		if hasEndpoints && svcInfo.UsesLocalEndpoints() {
+		if hasEndpoints && svcInfo.UsesLocalEndpoints() && !localWithFallback {
 			if chain, ok := existingNATChains[localPolicyChain]; ok {
 				proxier.natChains.WriteBytes(chain)
 			} else {
@@ -1365,7 +1381,7 @@ func (proxier *Proxier) syncProxyRules() {
 			proxier.writeServiceToEndpointRules(svcNameString, svcInfo, clusterPolicyChain, clusterEndpoints, args)
 		}
 
-		if svcInfo.UsesLocalEndpoints() {
+		if svcInfo.UsesLocalEndpoints() && !localWithFallback {
 			if len(localEndpoints) != 0 {
 				// Write rules jumping from localPolicyChain to localEndpointChains
 				proxier.writeServiceToEndpointRules(svcNameString, svcInfo, localPolicyChain, localEndpoints, args)

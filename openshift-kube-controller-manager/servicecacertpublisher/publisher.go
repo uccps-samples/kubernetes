@@ -165,7 +165,8 @@ func (c *Publisher) syncNamespace(ns string) (err error) {
 	annotations := map[string]string{
 		// This annotation prompts the service ca operator to inject
 		// the service ca bundle into the configmap.
-		"service.beta.openshift.io/inject-cabundle": "true",
+		// We ONLY inject the vulnerable CA bundle in 4.7 because we want consistency on injected files on upgraded clusters.
+		"service.alpha.openshift.io/inject-vulnerable-legacy-cabundle": "true",
 	}
 
 	cm, err := c.cmLister.ConfigMaps(ns).Get(ServiceCACertConfigMapName)

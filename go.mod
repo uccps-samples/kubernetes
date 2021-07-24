@@ -139,6 +139,7 @@ require (
 	k8s.io/sample-apiserver v0.0.0
 	k8s.io/system-validators v1.5.0
 	k8s.io/utils v0.0.0-20210819203725-bdf08cb9a70a
+	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.22 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.1.2
 	sigs.k8s.io/yaml v1.2.0
 )
@@ -558,7 +559,7 @@ replace (
 	modernc.org/strutil => modernc.org/strutil v1.0.0
 	modernc.org/xc => modernc.org/xc v1.0.0
 	rsc.io/pdf => rsc.io/pdf v0.1.1
-	sigs.k8s.io/apiserver-network-proxy/konnectivity-client => sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.21
+	sigs.k8s.io/apiserver-network-proxy/konnectivity-client => sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.22
 	sigs.k8s.io/controller-tools => sigs.k8s.io/controller-tools v0.2.8
 	sigs.k8s.io/kube-storage-version-migrator => sigs.k8s.io/kube-storage-version-migrator v0.0.4
 	sigs.k8s.io/kustomize/api => sigs.k8s.io/kustomize/api v0.8.11

@@ -22,6 +22,8 @@ import (
 	corev1client "k8s.io/client-go/kubernetes/typed/core/v1"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/klog/v2"
+
+	"k8s.io/kubernetes/cmd/watch-termination/flock"
 )
 
 func main() {
@@ -31,6 +33,8 @@ func main() {
 func run() int {
 	terminationLog := flag.String("termination-log-file", "", "Write logs after SIGTERM to this file (in addition to stderr)")
 	terminationLock := flag.String("termination-touch-file", "", "Touch this file on SIGTERM and delete on termination")
+	lockFile := flag.String("lock-file", "", "Lock file which is released after the watch termination process exits")
+	lockTimeout := flag.Duration("lock-timeout", 30*time.Second, "The duration for the lock to be acquired. If lock is not acquired, monitor will exit")
 	kubeconfigPath := flag.String("kubeconfig", "", "Optional kubeconfig used to create events")
 	gracefulTerminatioPeriod := flag.Duration("graceful-termination-duration", 105*time.Second, "The duration of the graceful termination period, e.g. 105s")
 
@@ -77,6 +81,24 @@ func run() int {
 		} else {
 			client = kubernetes.NewForConfigOrDie(cfg)
 		}
+	}
+	var lock *flock.FLock
+
+	if len(*lockFile) > 0 {
+		tryLockTimeout := 30 * time.Second
+		if lockTimeout != nil {
+			tryLockTimeout = *lockTimeout
+		}
+		lock = flock.New(*lockFile)
+		if err := lock.TryLock(tryLockTimeout); err != nil {
+			klog.Errorf("Failed to acquire the lock file: %v", err)
+			return 1
+		}
+		defer func() {
+			if err := lock.Unlock(); err != nil {
+				klog.Errorf("Failed to release the lock file: %v", err)
+			}
+		}()
 	}
 
 	// touch file early. If the file is not removed on termination, we are not

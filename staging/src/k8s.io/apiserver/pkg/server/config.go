@@ -265,9 +265,6 @@ type Config struct {
 
 	// StorageVersionManager holds the storage versions of the API resources installed by this server.
 	StorageVersionManager storageversion.Manager
-
-	// A func that returns whether the server is terminating. This can be nil.
-	IsTerminating func() bool
 }
 
 // EventSink allows to create events.
@@ -930,7 +927,7 @@ func DefaultBuildHandlerChain(apiHandler http.Handler, c *Config) http.Handler {
 	if c.ShutdownSendRetryAfter {
 		handler = genericfilters.WithRetryAfter(handler, c.lifecycleSignals.NotAcceptingNewRequest.Signaled())
 	}
-	handler = genericfilters.WithHTTPLogging(handler, c.IsTerminating)
+	handler = genericfilters.WithHTTPLogging(handler, c.newIsTerminatingFunc())
 	if utilfeature.DefaultFeatureGate.Enabled(genericfeatures.APIServerTracing) {
 		handler = genericapifilters.WithTracing(handler, c.TracerProvider)
 	}

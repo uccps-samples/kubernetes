@@ -485,7 +485,10 @@ func (s preparedGenericAPIServer) Run(stopCh <-chan struct{}) error {
 
 	go func() {
 		defer delayedStopCh.Signal()
-		defer klog.V(1).InfoS("[graceful-termination] shutdown event", "name", delayedStopCh.Name())
+		defer func() {
+			klog.V(1).InfoS("[graceful-termination] shutdown event", "name", delayedStopCh.Name())
+			s.Eventf(corev1.EventTypeNormal, delayedStopCh.Name(), "The minimal shutdown duration of %v finished", s.ShutdownDelayDuration)
+		}()
 
 		<-stopCh
 
@@ -494,12 +497,9 @@ func (s preparedGenericAPIServer) Run(stopCh <-chan struct{}) error {
 		// and stop sending traffic to this server.
 		shutdownInitiatedCh.Signal()
 		klog.V(1).InfoS("[graceful-termination] shutdown event", "name", shutdownInitiatedCh.Name())
-
-		s.Eventf(corev1.EventTypeNormal, "TerminationStart", "Received signal to terminate, becoming unready, but keeping serving")
+		s.Eventf(corev1.EventTypeNormal, shutdownInitiatedCh.Name(), "Received signal to terminate, becoming unready, but keeping serving")
 
 		time.Sleep(s.ShutdownDelayDuration)
-
-		s.Eventf(corev1.EventTypeNormal, "TerminationMinimalShutdownDurationFinished", "The minimal shutdown duration of %v finished", s.ShutdownDelayDuration)
 	}()
 
 	lateStopCh := make(chan struct{})
@@ -565,18 +565,21 @@ func (s preparedGenericAPIServer) Run(stopCh <-chan struct{}) error {
 		<-listenerStoppedCh
 		httpServerStoppedListeningCh.Signal()
 		klog.V(1).InfoS("[graceful-termination] shutdown event", "name", httpServerStoppedListeningCh.Name())
+		s.Eventf(corev1.EventTypeNormal, httpServerStoppedListeningCh.Name(), "HTTP Server has stopped listening")
 	}()
 
 	// we don't accept new request as soon as both ShutdownDelayDuration has
 	// elapsed and preshutdown hooks have completed.
 	preShutdownHooksHasStoppedCh := s.lifecycleSignals.PreShutdownHooksStopped
 	go func() {
-		defer klog.V(1).InfoS("[graceful-termination] shutdown event", "name", notAcceptingNewRequestCh.Name())
+		defer func() {
+			klog.V(1).InfoS("[graceful-termination] shutdown event", "name", notAcceptingNewRequestCh.Name())
+			s.Eventf(corev1.EventTypeNormal, notAcceptingNewRequestCh.Name(), "All non long-running request(s) in-flight have drained")
+		}()
 		defer notAcceptingNewRequestCh.Signal()
 
 		// wait for the delayed stopCh before closing the handler chain
 		<-delayedStopCh.Signaled()
-		s.Eventf(corev1.EventTypeNormal, "TerminationStoppedServing", "Server has stopped listening")
 
 		// Additionally wait for preshutdown hooks to also be finished, as some of them need
 		// to send API calls to clean up after themselves (e.g. lease reconcilers removing

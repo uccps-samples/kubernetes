@@ -11,12 +11,12 @@ require (
 	github.com/spf13/cobra v1.1.3
 	github.com/spf13/pflag v1.0.5
 	k8s.io/cli-runtime v0.0.0
-	k8s.io/client-go v0.22.0-rc.0
+	k8s.io/client-go v0.22.1
 )
 
 replace (
 	github.com/imdario/mergo => github.com/imdario/mergo v0.3.5
-	github.com/onsi/ginkgo => github.com/openshift/ginkgo v4.7.0-origin.0+incompatible
+	github.com/onsi/ginkgo => github.com/openshift/ginkgo v1.14.1-0.20210831090728-b44d806b01b6
 	k8s.io/api => ../api
 	k8s.io/apimachinery => ../apimachinery
 	k8s.io/cli-runtime => ../cli-runtime

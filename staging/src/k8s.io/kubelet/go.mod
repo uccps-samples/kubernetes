@@ -5,12 +5,12 @@ module k8s.io/kubelet
 go 1.15
 
 require (
-	github.com/gogo/protobuf v1.3.1
-	golang.org/x/net v0.0.0-20200707034311-ab3426394381
+	github.com/gogo/protobuf v1.3.2
+	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
 	google.golang.org/grpc v1.27.0
-	k8s.io/api v0.19.0
-	k8s.io/apimachinery v0.19.0
-	k8s.io/component-base v0.19.0
+	k8s.io/api v0.19.14
+	k8s.io/apimachinery v0.19.14
+	k8s.io/component-base v0.19.14
 )
 
 replace (

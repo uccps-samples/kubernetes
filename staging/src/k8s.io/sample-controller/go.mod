@@ -6,10 +6,10 @@ go 1.15
 
 require (
 	google.golang.org/appengine v1.6.5 // indirect
-	k8s.io/api v0.19.0
-	k8s.io/apimachinery v0.19.0
-	k8s.io/client-go v0.19.0
-	k8s.io/code-generator v0.19.0
+	k8s.io/api v0.19.14
+	k8s.io/apimachinery v0.19.14
+	k8s.io/client-go v0.19.14
+	k8s.io/code-generator v0.19.14
 	k8s.io/klog/v2 v2.3.0
 )
 

@@ -243,6 +243,7 @@ func (w *worker) doProbe() (keepGoing bool) {
 
 	if c.Started != nil && *c.Started {
 		// Stop probing for startup once container has started.
+		// we keep it running to make sure it will work for restarted container.
 		if w.probeType == startup {
 			return false
 		}

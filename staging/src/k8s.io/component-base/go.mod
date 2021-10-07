@@ -16,8 +16,8 @@ require (
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.4.0
 	go.uber.org/zap v1.10.0
-	k8s.io/apimachinery v0.19.0
-	k8s.io/client-go v0.19.0
+	k8s.io/apimachinery v0.19.14
+	k8s.io/client-go v0.19.14
 	k8s.io/klog/v2 v2.3.0
 	k8s.io/utils v0.0.0-20200729134348-d5654de09c73
 )

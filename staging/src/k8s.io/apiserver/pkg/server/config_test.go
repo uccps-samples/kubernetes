@@ -156,6 +156,7 @@ func TestNewWithDelegate(t *testing.T) {
 		"/healthz/ping",
 		"/healthz/poststarthook/delegate-post-start-hook",
 		"/healthz/poststarthook/generic-apiserver-start-informers",
+		"/healthz/poststarthook/max-in-flight-filter",
 		"/healthz/poststarthook/wrapping-post-start-hook",
 		"/healthz/wrapping-health",
 		"/livez",
@@ -164,6 +165,7 @@ func TestNewWithDelegate(t *testing.T) {
 		"/livez/ping",
 		"/livez/poststarthook/delegate-post-start-hook",
 		"/livez/poststarthook/generic-apiserver-start-informers",
+		"/livez/poststarthook/max-in-flight-filter",
 		"/livez/poststarthook/wrapping-post-start-hook",
 		"/metrics",
 		"/readyz",
@@ -173,6 +175,7 @@ func TestNewWithDelegate(t *testing.T) {
 		"/readyz/ping",
 		"/readyz/poststarthook/delegate-post-start-hook",
 		"/readyz/poststarthook/generic-apiserver-start-informers",
+		"/readyz/poststarthook/max-in-flight-filter",
 		"/readyz/poststarthook/wrapping-post-start-hook",
 		"/readyz/shutdown",
 	}
@@ -182,6 +185,7 @@ func TestNewWithDelegate(t *testing.T) {
 [-]wrapping-health failed: reason withheld
 [-]delegate-health failed: reason withheld
 [+]poststarthook/generic-apiserver-start-informers ok
+[+]poststarthook/max-in-flight-filter ok
 [+]poststarthook/delegate-post-start-hook ok
 [+]poststarthook/wrapping-post-start-hook ok
 healthz check failed

@@ -190,7 +190,6 @@ func Run(ctx context.Context, cc *schedulerserverconfig.CompletedConfig, sched *
 	}
 
 	// Start all informers.
-	go cc.PodInformer.Informer().Run(ctx.Done())
 	cc.InformerFactory.Start(ctx.Done())
 
 	// Wait for all caches to sync before scheduling.
@@ -330,7 +329,6 @@ func Setup(ctx context.Context, opts *options.Options, outOfTreeRegistryOptions 
 	// Create the scheduler.
 	sched, err := scheduler.New(cc.Client,
 		cc.InformerFactory,
-		cc.PodInformer,
 		recorderFactory,
 		ctx.Done(),
 		scheduler.WithProfiles(cc.ComponentConfig.Profiles...),

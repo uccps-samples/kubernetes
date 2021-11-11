@@ -638,7 +638,11 @@ func (vs *VSphere) BuildMissingVolumeNodeMap(ctx context.Context) {
 		// Start go routines per VC-DC to check disks are attached
 		wg.Add(1)
 		go func(nodes []k8stypes.NodeName) {
+<<<<<<< HEAD
 			err := vs.checkNodeDisks(ctx, nodeNames)
+=======
+			err := vs.checkNodeDisks(ctx, nodes)
+>>>>>>> v1.20.12
 			if err != nil {
 				klog.Errorf("Failed to check disk attached for nodes: %+v. err: %+v", nodes, err)
 			}

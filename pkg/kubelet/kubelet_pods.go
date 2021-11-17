@@ -981,7 +981,10 @@ func (kl *Kubelet) filterOutInactivePods(pods []*v1.Pod) []*v1.Pod {
 		if kl.podWorkers.IsPodKnownTerminated(p.UID) {
 			continue
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> v1.22.3
 		// terminal pods are considered inactive UNLESS they are actively terminating
 		if kl.isAdmittedPodTerminal(p) && !kl.podWorkers.IsPodTerminationRequested(p.UID) {
 			continue

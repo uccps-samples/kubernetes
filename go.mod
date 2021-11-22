@@ -399,7 +399,7 @@ replace (
 	github.com/opencontainers/runtime-spec => github.com/opencontainers/runtime-spec v1.0.3-0.20210326190908-1c3f411f0417
 	github.com/opencontainers/selinux => github.com/opencontainers/selinux v1.8.2
 	github.com/openshift/api => github.com/openshift/api v0.0.0-20210713130143-be21c6cb1bea
-	github.com/openshift/apiserver-library-go => github.com/openshift/apiserver-library-go v0.0.0-20211111022136-bfb62ec0e419
+	github.com/openshift/apiserver-library-go => github.com/openshift/apiserver-library-go v0.0.0-20211116020226-339bb71f9a26
 	github.com/openshift/build-machinery-go => github.com/openshift/build-machinery-go v0.0.0-20210209125900-0da259a2c359
 	github.com/openshift/client-go => github.com/openshift/client-go v0.0.0-20210422153130-25c8450d1535
 	github.com/openshift/library-go => github.com/openshift/library-go v0.0.0-20210407092538-7021fda6f427

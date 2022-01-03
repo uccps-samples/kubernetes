@@ -52,17 +52,12 @@ type respLogger struct {
 	statusRecorded bool
 	status         int
 	statusStack    string
-<<<<<<< HEAD
-	addedInfo      string
-	startTime      time.Time
-	isTerminating  bool
-=======
 	// mutex is used when accessing addedInfo
 	// It can be modified by other goroutine when logging happens (in case of request timeout)
-	mutex     sync.Mutex
-	addedInfo string
-	startTime time.Time
->>>>>>> v1.20.14
+	mutex         sync.Mutex
+	addedInfo     string
+	startTime     time.Time
+	isTerminating bool
 
 	captureErrorOutput bool
 

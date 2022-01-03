@@ -1,7 +1,7 @@
-// +build !linux,!windows,!dockerless
+// +build linux
 
 /*
-Copyright 2017 The Kubernetes Authors.
+Copyright 2021 The Kubernetes Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -16,14 +16,20 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package dockershim
+package e2enode
 
 import (
-	"fmt"
-
-	runtimeapi "k8s.io/cri-api/pkg/apis/runtime/v1alpha2"
+	"os/exec"
+	"strconv"
+	"strings"
 )
 
-func (ds *dockerService) getContainerStats(c *runtimeapi.Container) (*runtimeapi.ContainerStats, error) {
-	return nil, fmt.Errorf("not implemented")
+// countSRIOVDevices provides a rough estimate of SRIOV Virtual Functions available on the system.
+// This is a rough check we use to rule out unsuitable systems, not to detect suitable systems.
+func countSRIOVDevices() (int, error) {
+	outData, err := exec.Command("/bin/sh", "-c", "ls /sys/bus/pci/devices/*/physfn | wc -w").Output()
+	if err != nil {
+		return -1, err
+	}
+	return strconv.Atoi(strings.TrimSpace(string(outData)))
 }

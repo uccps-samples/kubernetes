@@ -70,13 +70,11 @@ type Options struct {
 
 	Master string
 
-<<<<<<< HEAD
 	// OpenShiftContext is additional context that we need to launch the kube-scheduler for openshift.
 	OpenShiftContext schedulerappconfig.OpenShiftContext
-=======
+
 	// Flags hold the parsed CLI flags.
 	Flags *cliflag.NamedFlagSets
->>>>>>> v1.22.5
 }
 
 // NewOptions returns default scheduler app options.

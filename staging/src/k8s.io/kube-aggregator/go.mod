@@ -12,6 +12,7 @@ require (
 	github.com/spf13/cobra v1.1.3
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.7.0
+<<<<<<< HEAD
 	golang.org/x/net v0.0.0-20210520170846-37e1c6afe023
 	k8s.io/api v0.22.1
 	k8s.io/apimachinery v0.22.1
@@ -19,8 +20,17 @@ require (
 	k8s.io/client-go v0.22.1
 	k8s.io/code-generator v0.22.1
 	k8s.io/component-base v0.22.1
+=======
+	golang.org/x/net v0.0.0-20211209124913-491a49abca63
+	k8s.io/api v0.0.0
+	k8s.io/apimachinery v0.0.0
+	k8s.io/apiserver v0.0.0
+	k8s.io/client-go v0.0.0
+	k8s.io/code-generator v0.0.0
+	k8s.io/component-base v0.0.0
+>>>>>>> v1.22.5
 	k8s.io/klog/v2 v2.9.0
-	k8s.io/kube-openapi v0.0.0-20210421082810-95288971da7e
+	k8s.io/kube-openapi v0.0.0-20211109043538-20434351676c
 	k8s.io/utils v0.0.0-20210819203725-bdf08cb9a70a
 	sigs.k8s.io/structured-merge-diff/v4 v4.1.2
 )

@@ -72,7 +72,7 @@ require (
 	github.com/openshift/api v0.0.0-20210910062324-a41d3573a3ba
 	github.com/openshift/apiserver-library-go v0.0.0-20211116020226-339bb71f9a26
 	github.com/openshift/client-go v0.0.0-20210521082421-73d9475a9142
-	github.com/openshift/library-go v0.0.0-20211109160828-8c48fafbad15
+	github.com/openshift/library-go v0.0.0-20211220193923-bada80ab49e9
 	github.com/pkg/errors v0.9.1
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/prometheus/client_model v0.2.0
@@ -105,7 +105,7 @@ require (
 	gopkg.in/square/go-jose.v2 v2.2.2
 	gopkg.in/yaml.v2 v2.4.0
 	k8s.io/api v0.21.1
-	k8s.io/apiextensions-apiserver v0.21.0-rc.0
+	k8s.io/apiextensions-apiserver v0.21.1
 	k8s.io/apimachinery v0.21.1
 	k8s.io/apiserver v0.21.1
 	k8s.io/cli-runtime v0.0.0
@@ -121,7 +121,7 @@ require (
 	k8s.io/gengo v0.0.0-20201214224949-b6c5ce23f027
 	k8s.io/heapster v1.2.0-beta.1
 	k8s.io/klog/v2 v2.9.0
-	k8s.io/kube-aggregator v0.21.0-rc.0
+	k8s.io/kube-aggregator v0.21.1
 	k8s.io/kube-controller-manager v0.0.0
 	k8s.io/kube-openapi v0.0.0-20211110012726-3cc51fd1e909
 	k8s.io/kube-proxy v0.0.0
@@ -134,6 +134,7 @@ require (
 	k8s.io/sample-apiserver v0.0.0
 	k8s.io/system-validators v1.4.0
 	k8s.io/utils v0.0.0-20210521133846-da695404a2bc
+	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.22 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.1.2
 	sigs.k8s.io/yaml v1.2.0
 )
@@ -397,11 +398,11 @@ replace (
 	github.com/opencontainers/runc => github.com/opencontainers/runc v1.0.2
 	github.com/opencontainers/runtime-spec => github.com/opencontainers/runtime-spec v1.0.3-0.20210326190908-1c3f411f0417
 	github.com/opencontainers/selinux => github.com/opencontainers/selinux v1.8.2
-	github.com/openshift/api => github.com/openshift/api v0.0.0-20210713130143-be21c6cb1bea
+	github.com/openshift/api => github.com/openshift/api v0.0.0-20210910062324-a41d3573a3ba
 	github.com/openshift/apiserver-library-go => github.com/openshift/apiserver-library-go v0.0.0-20211116020226-339bb71f9a26
 	github.com/openshift/build-machinery-go => github.com/openshift/build-machinery-go v0.0.0-20210209125900-0da259a2c359
-	github.com/openshift/client-go => github.com/openshift/client-go v0.0.0-20210422153130-25c8450d1535
-	github.com/openshift/library-go => github.com/openshift/library-go v0.0.0-20210407092538-7021fda6f427
+	github.com/openshift/client-go => github.com/openshift/client-go v0.0.0-20210521082421-73d9475a9142
+	github.com/openshift/library-go => github.com/openshift/library-go v0.0.0-20211220193923-bada80ab49e9
 	github.com/pascaldekloe/goe => github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c
 	github.com/pelletier/go-toml => github.com/pelletier/go-toml v1.2.0
 	github.com/peterbourgon/diskv => github.com/peterbourgon/diskv v2.0.1+incompatible
@@ -509,7 +510,7 @@ replace (
 	gotest.tools/v3 => gotest.tools/v3 v3.0.3
 	honnef.co/go/tools => honnef.co/go/tools v0.0.1-2020.1.3
 	k8s.io/api => k8s.io/api v0.21.1
-	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.21.0-rc.0
+	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.21.1
 	k8s.io/apimachinery => k8s.io/apimachinery v0.21.1
 	k8s.io/apiserver => k8s.io/apiserver v0.21.1
 	k8s.io/cli-runtime => ./staging/src/k8s.io/cli-runtime
@@ -517,7 +518,7 @@ replace (
 	k8s.io/cloud-provider => ./staging/src/k8s.io/cloud-provider
 	k8s.io/cluster-bootstrap => ./staging/src/k8s.io/cluster-bootstrap
 	k8s.io/code-generator => k8s.io/code-generator v0.21.1
-	k8s.io/component-base => k8s.io/component-base v0.21.0-rc.0
+	k8s.io/component-base => k8s.io/component-base v0.21.1
 	k8s.io/component-helpers => ./staging/src/k8s.io/component-helpers
 	k8s.io/controller-manager => ./staging/src/k8s.io/controller-manager
 	k8s.io/cri-api => ./staging/src/k8s.io/cri-api
@@ -526,7 +527,7 @@ replace (
 	k8s.io/heapster => k8s.io/heapster v1.2.0-beta.1
 	k8s.io/klog => k8s.io/klog v1.0.0
 	k8s.io/klog/v2 => k8s.io/klog/v2 v2.9.0
-	k8s.io/kube-aggregator => k8s.io/kube-aggregator v0.21.0-rc.0
+	k8s.io/kube-aggregator => k8s.io/kube-aggregator v0.21.1
 	k8s.io/kube-controller-manager => ./staging/src/k8s.io/kube-controller-manager
 	k8s.io/kube-openapi => k8s.io/kube-openapi v0.0.0-20211110012726-3cc51fd1e909
 	k8s.io/kube-proxy => ./staging/src/k8s.io/kube-proxy

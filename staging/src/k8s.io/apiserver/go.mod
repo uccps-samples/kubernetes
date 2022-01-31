@@ -28,7 +28,7 @@ require (
 	go.uber.org/atomic v1.4.0
 	go.uber.org/zap v1.10.0
 	golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83
-	golang.org/x/net v0.0.0-20210224082022-3d97a244fca7
+	golang.org/x/net v0.0.0-20211209124913-491a49abca63
 	golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9
 	golang.org/x/sys v0.0.0-20210426230700-d19ff857e887
 	google.golang.org/grpc v1.27.1
@@ -40,7 +40,11 @@ require (
 	k8s.io/client-go v0.21.1
 	k8s.io/component-base v0.21.0-rc.0
 	k8s.io/klog/v2 v2.9.0
+<<<<<<< HEAD
 	k8s.io/kube-openapi v0.0.0-20210305001622-591a79e4bda7
+=======
+	k8s.io/kube-openapi v0.0.0-20211110012726-3cc51fd1e909
+>>>>>>> v1.21.8
 	k8s.io/utils v0.0.0-20210521133846-da695404a2bc
 	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.22
 	sigs.k8s.io/structured-merge-diff/v4 v4.1.2

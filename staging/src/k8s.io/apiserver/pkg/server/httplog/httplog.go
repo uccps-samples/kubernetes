@@ -53,17 +53,12 @@ type respLogger struct {
 	statusRecorded bool
 	status         int
 	statusStack    string
-<<<<<<< HEAD
-	addedInfo      string
-	startTime      time.Time
-	isTerminating  bool
-=======
 	// mutex is used when accessing addedInfo
 	// It can be modified by other goroutine when logging happens (in case of request timeout)
-	mutex     sync.Mutex
-	addedInfo string
-	startTime time.Time
->>>>>>> v1.21.8
+	mutex         sync.Mutex
+	addedInfo     string
+	startTime     time.Time
+	isTerminating bool
 
 	captureErrorOutput bool
 
@@ -207,12 +202,8 @@ func (rl *respLogger) LogArgs() []interface{} {
 			"verb", rl.req.Method,
 			"URI", rl.req.RequestURI,
 			"latency", latency,
-<<<<<<< HEAD
-			"userAgent", rl.req.UserAgent(),
-			"audit-ID", auditID,
-=======
 			"userAgent", rl.userAgent,
->>>>>>> v1.21.8
+			"audit-ID", auditID,
 			"srcIP", rl.req.RemoteAddr,
 			"hijacked", true,
 		}
@@ -221,17 +212,13 @@ func (rl *respLogger) LogArgs() []interface{} {
 		"verb", rl.req.Method,
 		"URI", rl.req.RequestURI,
 		"latency", latency,
-<<<<<<< HEAD
-		"userAgent", rl.req.UserAgent(),
-		"audit-ID", auditID,
-=======
 		// We can't get UserAgent from rl.req.UserAgent() here as it accesses headers map,
 		// which can be modified in another goroutine when apiserver request times out.
 		// For example authentication filter modifies request's headers,
 		// This can cause apiserver to crash with unrecoverable fatal error.
 		// More info about concurrent read and write for maps: https://golang.org/doc/go1.6#runtime
 		"userAgent", rl.userAgent,
->>>>>>> v1.21.8
+		"audit-ID", auditID,
 		"srcIP", rl.req.RemoteAddr,
 		"resp", rl.status,
 	}

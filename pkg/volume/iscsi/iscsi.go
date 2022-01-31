@@ -220,15 +220,11 @@ func (plugin *iscsiPlugin) ConstructVolumeSpec(volumeName, mountPath string) (*v
 	// Find globalPDPath from pod volume directory(mountPath)
 	var globalPDPath string
 	mounter := plugin.host.GetMounter(plugin.GetPluginName())
-<<<<<<< HEAD
-	paths, err := mounter.GetMountRefs(mountPath)
-=======
 	// Try really hard to get the global mount of the volume, an error returned from here would
 	// leave the global mount still mounted, while marking the volume as unused.
 	// The volume can then be mounted on several nodes, resulting in volume
 	// corruption.
 	paths, err := util.GetReliableMountRefs(mounter, mountPath)
->>>>>>> v1.21.8
 	if io.IsInconsistentReadError(err) {
 		klog.Errorf("Failed to read mount refs from /proc/mounts for %s: %s", mountPath, err)
 		klog.Errorf("Kubelet cannot unmount volume at %s, please unmount it and all mounts of the same device manually.", mountPath)

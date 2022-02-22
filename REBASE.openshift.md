@@ -228,6 +228,8 @@ This value, among other things, is used by ART to inject appropriate version of
 kubernetes during build process, so it always has to reflect correct level of
 kubernetes.
 
+TODO: Due to a bug in release controller, we need to push the kubernetes tag.
+
 ## Update base-os and test images
 
 To be able to use the latest kubelet from a pull request, in this repository

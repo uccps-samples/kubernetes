@@ -20,7 +20,7 @@ require (
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
 	github.com/hashicorp/golang-lru v0.5.1
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
-	github.com/openshift/library-go v0.0.0-20211109160828-8c48fafbad15
+	github.com/openshift/library-go v0.0.0-20211220193923-bada80ab49e9
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.6.1
@@ -28,7 +28,7 @@ require (
 	go.uber.org/atomic v1.4.0
 	go.uber.org/zap v1.10.0
 	golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83
-	golang.org/x/net v0.0.0-20210224082022-3d97a244fca7
+	golang.org/x/net v0.0.0-20211209124913-491a49abca63
 	golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9
 	golang.org/x/sys v0.0.0-20210426230700-d19ff857e887
 	google.golang.org/grpc v1.27.1
@@ -38,9 +38,9 @@ require (
 	k8s.io/api v0.21.1
 	k8s.io/apimachinery v0.21.1
 	k8s.io/client-go v0.21.1
-	k8s.io/component-base v0.21.0-rc.0
+	k8s.io/component-base v0.21.1
 	k8s.io/klog/v2 v2.9.0
-	k8s.io/kube-openapi v0.0.0-20210305001622-591a79e4bda7
+	k8s.io/kube-openapi v0.0.0-20211110012726-3cc51fd1e909
 	k8s.io/utils v0.0.0-20210521133846-da695404a2bc
 	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.22
 	sigs.k8s.io/structured-merge-diff/v4 v4.1.2
@@ -53,10 +53,7 @@ replace (
 	github.com/imdario/mergo => github.com/imdario/mergo v0.3.5
 	github.com/mattn/go-colorable => github.com/mattn/go-colorable v0.0.9
 	github.com/onsi/ginkgo => github.com/openshift/ginkgo v4.7.0-origin.0+incompatible
-	github.com/openshift/api => github.com/openshift/api v0.0.0-20210713130143-be21c6cb1bea
 	github.com/openshift/build-machinery-go => github.com/openshift/build-machinery-go v0.0.0-20210209125900-0da259a2c359
-	github.com/openshift/client-go => github.com/openshift/client-go v0.0.0-20210422153130-25c8450d1535
-	github.com/openshift/library-go => github.com/openshift/library-go v0.0.0-20210407092538-7021fda6f427
 	github.com/robfig/cron => github.com/robfig/cron v1.1.0
 	go.uber.org/multierr => go.uber.org/multierr v1.1.0
 	k8s.io/api => ../api
@@ -83,4 +80,5 @@ replace (
 	k8s.io/metrics => ../metrics
 	k8s.io/mount-utils => ../mount-utils
 	k8s.io/sample-apiserver => ../sample-apiserver
+	sigs.k8s.io/kube-storage-version-migrator => sigs.k8s.io/kube-storage-version-migrator v0.0.3
 )

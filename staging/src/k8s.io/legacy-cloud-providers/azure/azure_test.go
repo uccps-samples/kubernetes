@@ -3311,6 +3311,7 @@ func TestUpdateNodeCacheExcludeLoadBalancer(t *testing.T) {
 	az.updateNodeCaches(&prevNode, &newNode)
 	assert.Equal(t, 1, len(az.excludeLoadBalancerNodes))
 
+<<<<<<< HEAD
 	// non-ready node should be excluded
 	az.unmanagedNodes = sets.NewString()
 	az.excludeLoadBalancerNodes = sets.NewString()
@@ -3353,6 +3354,8 @@ func TestUpdateNodeCacheExcludeLoadBalancer(t *testing.T) {
 	az.updateNodeCaches(&nonReadyNode, &readyNode)
 	assert.Equal(t, 0, len(az.excludeLoadBalancerNodes))
 
+=======
+>>>>>>> v1.23.5
 }
 
 func TestGetActiveZones(t *testing.T) {

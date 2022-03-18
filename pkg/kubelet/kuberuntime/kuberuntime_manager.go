@@ -1066,10 +1066,6 @@ func (m *kubeGenericRuntimeManager) GetPodStatus(uid kubetypes.UID, name, namesp
 			return nil, err
 		}
 		sandboxStatuses = append(sandboxStatuses, podSandboxStatus)
-<<<<<<< HEAD
-
-=======
->>>>>>> v1.23.5
 		// Only get pod IP from latest sandbox
 		if idx == 0 && podSandboxStatus.State == runtimeapi.PodSandboxState_SANDBOX_READY {
 			podIPs = m.determinePodSandboxIPs(namespace, name, podSandboxStatus)

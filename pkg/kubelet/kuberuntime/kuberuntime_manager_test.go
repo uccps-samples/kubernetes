@@ -374,10 +374,7 @@ func TestStopContainerWithNotFoundError(t *testing.T) {
 	err = m.KillPod(pod, p, &gracePeriod)
 	require.NoError(t, err)
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> v1.23.5
 func TestGetPodStatusWithNotFoundError(t *testing.T) {
 	fakeRuntime, _, m, err := createTestRuntimeManager()
 	assert.NoError(t, err)

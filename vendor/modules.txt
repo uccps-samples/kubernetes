@@ -676,7 +676,7 @@ github.com/opencontainers/runtime-spec/specs-go
 github.com/opencontainers/selinux/go-selinux
 github.com/opencontainers/selinux/go-selinux/label
 github.com/opencontainers/selinux/pkg/pwalk
-# github.com/openshift/api v0.0.0-20211209173311-a19f3b9052a6 => github.com/openshift/api v0.0.0-20211209173311-a19f3b9052a6
+# github.com/openshift/api v0.0.0-20220124143425-d74727069f6f => github.com/openshift/api v0.0.0-20220124143425-d74727069f6f
 ## explicit
 github.com/openshift/api/apiserver/v1
 github.com/openshift/api/apps/v1
@@ -828,7 +828,7 @@ github.com/openshift/client-go/user/informers/externalversions/internalinterface
 github.com/openshift/client-go/user/informers/externalversions/user
 github.com/openshift/client-go/user/informers/externalversions/user/v1
 github.com/openshift/client-go/user/listers/user/v1
-# github.com/openshift/library-go v0.0.0-20211209153216-ed9bc958bd8a => github.com/openshift/library-go v0.0.0-20211209153216-ed9bc958bd8a
+# github.com/openshift/library-go v0.0.0-20220303081124-fb4e7a2872f0 => github.com/openshift/library-go v0.0.0-20220303081124-fb4e7a2872f0
 ## explicit
 github.com/openshift/library-go/pkg/apiserver/admission/admissionregistrationtesting
 github.com/openshift/library-go/pkg/apiserver/admission/admissionrestconfig
@@ -2542,7 +2542,7 @@ k8s.io/utils/pointer
 k8s.io/utils/strings
 k8s.io/utils/strings/slices
 k8s.io/utils/trace
-# sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.27 => sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.27
+# sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.30 => sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.30
 ## explicit
 sigs.k8s.io/apiserver-network-proxy/konnectivity-client/pkg/client
 sigs.k8s.io/apiserver-network-proxy/konnectivity-client/proto/client
@@ -2669,6 +2669,7 @@ sigs.k8s.io/yaml
 # github.com/OneOfOne/xxhash => github.com/OneOfOne/xxhash v1.2.2
 # github.com/PuerkitoBio/purell => github.com/PuerkitoBio/purell v1.1.1
 # github.com/PuerkitoBio/urlesc => github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578
+# github.com/RangelReale/osincli => github.com/RangelReale/osincli v0.0.0-20160924135400-fababb0555f2
 # github.com/ajstarks/svgo => github.com/ajstarks/svgo v0.0.0-20180226025133-644b8db467af
 # github.com/antihax/optional => github.com/antihax/optional v1.0.0
 # github.com/antlr/antlr4/runtime/Go/antlr => github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20210826220005-b48c857c3a0e
@@ -2889,11 +2890,11 @@ sigs.k8s.io/yaml
 # github.com/opencontainers/runc => github.com/opencontainers/runc v1.0.2
 # github.com/opencontainers/runtime-spec => github.com/opencontainers/runtime-spec v1.0.3-0.20210326190908-1c3f411f0417
 # github.com/opencontainers/selinux => github.com/opencontainers/selinux v1.8.2
-# github.com/openshift/api => github.com/openshift/api v0.0.0-20211209173311-a19f3b9052a6
+# github.com/openshift/api => github.com/openshift/api v0.0.0-20220124143425-d74727069f6f
 # github.com/openshift/apiserver-library-go => github.com/openshift/apiserver-library-go v0.0.0-20211209162547-8c11dbc46b6e
 # github.com/openshift/build-machinery-go => github.com/openshift/build-machinery-go v0.0.0-20210806203541-4ea9b6da3a37
 # github.com/openshift/client-go => github.com/openshift/client-go v0.0.0-20211209144617-7385dd6338e3
-# github.com/openshift/library-go => github.com/openshift/library-go v0.0.0-20211209153216-ed9bc958bd8a
+# github.com/openshift/library-go => github.com/openshift/library-go v0.0.0-20220303081124-fb4e7a2872f0
 # github.com/opentracing/opentracing-go => github.com/opentracing/opentracing-go v1.1.0
 # github.com/pascaldekloe/goe => github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c
 # github.com/pelletier/go-toml => github.com/pelletier/go-toml v1.9.3
@@ -3056,7 +3057,7 @@ sigs.k8s.io/yaml
 # modernc.org/strutil => modernc.org/strutil v1.0.0
 # modernc.org/xc => modernc.org/xc v1.0.0
 # rsc.io/pdf => rsc.io/pdf v0.1.1
-# sigs.k8s.io/apiserver-network-proxy/konnectivity-client => sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.27
+# sigs.k8s.io/apiserver-network-proxy/konnectivity-client => sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.30
 # sigs.k8s.io/controller-tools => sigs.k8s.io/controller-tools v0.2.8
 # sigs.k8s.io/json => sigs.k8s.io/json v0.0.0-20211020170558-c049b76a60c6
 # sigs.k8s.io/kube-storage-version-migrator => sigs.k8s.io/kube-storage-version-migrator v0.0.4

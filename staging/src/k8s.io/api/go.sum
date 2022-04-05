@@ -428,7 +428,7 @@ github.com/openshift/client-go v0.0.0-20210831095141-e19a065e79f7/go.mod h1:D6P8
 github.com/openshift/ginkgo v4.7.0-origin.0+incompatible/go.mod h1:8METQ1gDhl0KW+pGH4c0DIJYEN/ksVCL6hOuHPmXGnk=
 github.com/openshift/google-cadvisor v0.33.2-0.20210825140152-3e7875ab2744/go.mod h1:kN93gpdevu+bpS227TyHVZyCU5bbqCzTj5T9drl34MI=
 github.com/openshift/library-go v0.0.0-20210831102543-1a08f0c3bd9a/go.mod h1:ymWf1TnfDo0LgjihlqHzYoy81pTY5wBL+bl3XdHNEYI=
-github.com/openshift/library-go v0.0.0-20211207082558-36821c7a1fa2/go.mod h1:fKtzrsRXSWMLiBT1SM8cEVT2YyL7ihx/TEuT3gmgFgQ=
+github.com/openshift/library-go v0.0.0-20220405121559-e304504b7d6f/go.mod h1:5TSPiu4ZEPW5NwUspgqYqjSD/wF86JWGy+x8jB+9oB4=
 github.com/opentracing/opentracing-go v1.1.0/go.mod h1:UkNAQd3GIcIGf0SeVgPpRdFStlNbqXla1AfSYxPUl2o=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=

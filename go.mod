@@ -70,7 +70,7 @@ require (
 	github.com/openshift/api v0.0.0-20211028023115-7224b732cc14
 	github.com/openshift/apiserver-library-go v0.0.0-20211105091019-06e87e7030eb
 	github.com/openshift/client-go v0.0.0-20210831095141-e19a065e79f7
-	github.com/openshift/library-go v0.0.0-20211207082558-36821c7a1fa2
+	github.com/openshift/library-go v0.0.0-20220405121559-e304504b7d6f
 	github.com/pkg/errors v0.9.1
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/prometheus/client_golang v1.11.0
@@ -139,6 +139,7 @@ require (
 	k8s.io/sample-apiserver v0.0.0
 	k8s.io/system-validators v1.5.0
 	k8s.io/utils v0.0.0-20211116205334-6203023598ed
+	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.30 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.1
 	sigs.k8s.io/yaml v1.2.0
 )
@@ -396,7 +397,7 @@ replace (
 	github.com/openshift/apiserver-library-go => github.com/openshift/apiserver-library-go v0.0.0-20211105091019-06e87e7030eb
 	github.com/openshift/build-machinery-go => github.com/openshift/build-machinery-go v0.0.0-20210806203541-4ea9b6da3a37
 	github.com/openshift/client-go => github.com/openshift/client-go v0.0.0-20210831095141-e19a065e79f7
-	github.com/openshift/library-go => github.com/openshift/library-go v0.0.0-20211207082558-36821c7a1fa2
+	github.com/openshift/library-go => github.com/openshift/library-go v0.0.0-20220405121559-e304504b7d6f
 	github.com/opentracing/opentracing-go => github.com/opentracing/opentracing-go v1.1.0
 	github.com/pascaldekloe/goe => github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c
 	github.com/pelletier/go-toml => github.com/pelletier/go-toml v1.2.0

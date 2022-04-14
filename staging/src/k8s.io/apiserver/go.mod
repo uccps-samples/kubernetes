@@ -17,7 +17,7 @@ require (
 	github.com/googleapis/gnostic v0.5.5
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822
-	github.com/openshift/library-go v0.0.0-20211207082558-36821c7a1fa2
+	github.com/openshift/library-go v0.0.0-20220405121559-e304504b7d6f
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.7.0
 	go.etcd.io/etcd/api/v3 v3.5.0
@@ -46,8 +46,8 @@ require (
 	k8s.io/klog/v2 v2.9.0
 	k8s.io/kube-openapi v0.0.0-20211109043538-20434351676c
 	k8s.io/utils v0.0.0-20211116205334-6203023598ed
-	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.22
-	sigs.k8s.io/structured-merge-diff/v4 v4.1.2
+	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.0.30
+	sigs.k8s.io/structured-merge-diff/v4 v4.2.1
 	sigs.k8s.io/yaml v1.2.0
 )
 

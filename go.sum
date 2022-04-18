@@ -415,8 +415,8 @@ github.com/openshift/ginkgo v4.7.0-origin.0+incompatible h1:2qD1n/RAnycWMPjYS6ME
 github.com/openshift/ginkgo v4.7.0-origin.0+incompatible/go.mod h1:8METQ1gDhl0KW+pGH4c0DIJYEN/ksVCL6hOuHPmXGnk=
 github.com/openshift/google-cadvisor v0.33.2-0.20210610135131-57b941c7657a h1:h1tsWVPFkxJKmbkG9XcS1I5I12pTFY/7zYsry3NXxiY=
 github.com/openshift/google-cadvisor v0.33.2-0.20210610135131-57b941c7657a/go.mod h1:kN93gpdevu+bpS227TyHVZyCU5bbqCzTj5T9drl34MI=
-github.com/openshift/library-go v0.0.0-20211220193923-bada80ab49e9 h1:uCK06x7mOAbUStJCt3rcPtUxGwlQskzgCnZYW/SLyvY=
-github.com/openshift/library-go v0.0.0-20211220193923-bada80ab49e9/go.mod h1:C5DDOSPucn3EVA0T05fODKtAweTObMBrTYm/G3uUBI8=
+github.com/openshift/library-go v0.0.0-20220418144517-9b2f1479b51c h1:/ELRC7+gGqOTRof9xk8sKLA+e9VhnH6/wS9xuqAcPQ0=
+github.com/openshift/library-go v0.0.0-20220418144517-9b2f1479b51c/go.mod h1:C5DDOSPucn3EVA0T05fODKtAweTObMBrTYm/G3uUBI8=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pelletier/go-toml v1.2.0 h1:T5zMGML61Wp+FlcbWjRDT7yAxhJNAiPPLOFECq181zc=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=

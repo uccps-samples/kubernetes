@@ -483,7 +483,7 @@ github.com/openshift/client-go v0.0.0-20210521082421-73d9475a9142/go.mod h1:fjS8
 github.com/openshift/ginkgo v4.7.0-origin.0+incompatible/go.mod h1:8METQ1gDhl0KW+pGH4c0DIJYEN/ksVCL6hOuHPmXGnk=
 github.com/openshift/google-cadvisor v0.33.2-0.20210610135131-57b941c7657a/go.mod h1:kN93gpdevu+bpS227TyHVZyCU5bbqCzTj5T9drl34MI=
 github.com/openshift/library-go v0.0.0-20210521084623-7392ea9b02ca/go.mod h1:87ZYjEncF0YNUKNzncb8Fiw8yFNevpIWZW83C/etzpw=
-github.com/openshift/library-go v0.0.0-20211220193923-bada80ab49e9/go.mod h1:C5DDOSPucn3EVA0T05fODKtAweTObMBrTYm/G3uUBI8=
+github.com/openshift/library-go v0.0.0-20220418144517-9b2f1479b51c/go.mod h1:C5DDOSPucn3EVA0T05fODKtAweTObMBrTYm/G3uUBI8=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pborman/uuid v1.2.0/go.mod h1:X/NO0urCmaxf9VXbdlT7C2Yzkj2IKimNn4k+gtPdI/k=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=

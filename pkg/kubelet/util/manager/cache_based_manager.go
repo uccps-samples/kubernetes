@@ -29,7 +29,6 @@ import (
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
-	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/util/clock"
 	"k8s.io/apimachinery/pkg/util/sets"
 )
@@ -43,7 +42,6 @@ type GetObjectFunc func(string, string, metav1.GetOptions) (runtime.Object, erro
 type objectKey struct {
 	namespace string
 	name      string
-	uid       types.UID
 }
 
 // objectStoreItems is a single item stored in objectStore.
@@ -228,7 +226,7 @@ func (c *cacheBasedManager) RegisterPod(pod *v1.Pod) {
 		c.objectStore.AddReference(pod.Namespace, name)
 	}
 	var prev *v1.Pod
-	key := objectKey{namespace: pod.Namespace, name: pod.Name, uid: pod.UID}
+	key := objectKey{namespace: pod.Namespace, name: pod.Name}
 	prev = c.registeredPods[key]
 	c.registeredPods[key] = pod
 	if prev != nil {
@@ -245,7 +243,7 @@ func (c *cacheBasedManager) RegisterPod(pod *v1.Pod) {
 
 func (c *cacheBasedManager) UnregisterPod(pod *v1.Pod) {
 	var prev *v1.Pod
-	key := objectKey{namespace: pod.Namespace, name: pod.Name, uid: pod.UID}
+	key := objectKey{namespace: pod.Namespace, name: pod.Name}
 	c.lock.Lock()
 	defer c.lock.Unlock()
 	prev = c.registeredPods[key]

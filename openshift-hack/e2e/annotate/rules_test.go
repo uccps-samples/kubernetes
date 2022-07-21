@@ -3,7 +3,7 @@ package annotate
 import (
 	"testing"
 
-	"github.com/onsi/ginkgo/types"
+	"github.com/onsi/ginkgo/v2/types"
 )
 
 type testNode struct {

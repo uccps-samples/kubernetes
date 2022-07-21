@@ -21,14 +21,14 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/vmware/govmomi v0.20.3
 	golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd
-	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8
+	golang.org/x/oauth2 v0.0.0-20220411215720-9780585627b5
 	google.golang.org/api v0.60.0
 	gopkg.in/gcfg.v1 v1.2.0
-	k8s.io/api v0.0.0
-	k8s.io/apimachinery v0.0.0
-	k8s.io/client-go v0.0.0
+	k8s.io/api v0.25.0-alpha.2
+	k8s.io/apimachinery v0.25.0-alpha.2
+	k8s.io/client-go v0.25.0-alpha.2
 	k8s.io/cloud-provider v0.0.0
-	k8s.io/component-base v0.0.0
+	k8s.io/component-base v0.25.0-alpha.2
 	k8s.io/csi-translation-lib v0.0.0
 	k8s.io/klog/v2 v2.70.1
 	k8s.io/mount-utils v0.0.0
@@ -48,7 +48,6 @@ require (
 	github.com/blang/semver/v4 v4.0.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/dnaeon/go-vcr v1.0.1 // indirect
 	github.com/emicklei/go-restful/v3 v3.8.0 // indirect
 	github.com/evanphx/json-patch v4.12.0+incompatible // indirect
 	github.com/go-logr/logr v1.2.3 // indirect
@@ -64,7 +63,6 @@ require (
 	github.com/google/gofuzz v1.1.0 // indirect
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/googleapis/gax-go/v2 v2.1.1 // indirect
-	github.com/imdario/mergo v0.3.5 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
@@ -101,15 +99,35 @@ require (
 )
 
 replace (
+	github.com/imdario/mergo => github.com/imdario/mergo v0.3.5
+	github.com/openshift/api => github.com/soltysh/api v0.0.0-20220721133318-9920c3ceb681
+	github.com/openshift/apiserver-library-go => github.com/soltysh/apiserver-library-go v0.0.0-20220721143050-7efa9d69f5a2
+	github.com/openshift/client-go => github.com/soltysh/client-go v0.0.0-20220721133508-0c49f9851936
+	github.com/openshift/library-go => github.com/soltysh/library-go v0.0.0-20220721134605-8082b849a97e
+	golang.org/x/oauth2 => golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8
 	k8s.io/api => ../api
+	k8s.io/apiextensions-apiserver => ../apiextensions-apiserver
 	k8s.io/apimachinery => ../apimachinery
 	k8s.io/apiserver => ../apiserver
+	k8s.io/cli-runtime => ../cli-runtime
 	k8s.io/client-go => ../client-go
 	k8s.io/cloud-provider => ../cloud-provider
+	k8s.io/cluster-bootstrap => ../cluster-bootstrap
+	k8s.io/code-generator => ../code-generator
 	k8s.io/component-base => ../component-base
 	k8s.io/component-helpers => ../component-helpers
 	k8s.io/controller-manager => ../controller-manager
+	k8s.io/cri-api => ../cri-api
 	k8s.io/csi-translation-lib => ../csi-translation-lib
+	k8s.io/kube-aggregator => ../kube-aggregator
+	k8s.io/kube-controller-manager => ../kube-controller-manager
+	k8s.io/kube-proxy => ../kube-proxy
+	k8s.io/kube-scheduler => ../kube-scheduler
+	k8s.io/kubectl => ../kubectl
+	k8s.io/kubelet => ../kubelet
 	k8s.io/legacy-cloud-providers => ../legacy-cloud-providers
+	k8s.io/metrics => ../metrics
 	k8s.io/mount-utils => ../mount-utils
+	k8s.io/pod-security-admission => ../pod-security-admission
+	k8s.io/sample-apiserver => ../sample-apiserver
 )

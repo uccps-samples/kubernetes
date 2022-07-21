@@ -30,11 +30,11 @@ require (
 	github.com/stretchr/testify v1.7.0
 	golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8
 	gopkg.in/yaml.v2 v2.4.0
-	k8s.io/api v0.0.0
-	k8s.io/apimachinery v0.0.0
+	k8s.io/api v0.25.0-alpha.2
+	k8s.io/apimachinery v0.25.0-alpha.2
 	k8s.io/cli-runtime v0.0.0
-	k8s.io/client-go v0.0.0
-	k8s.io/component-base v0.0.0
+	k8s.io/client-go v0.25.0-alpha.2
+	k8s.io/component-base v0.25.0-alpha.2
 	k8s.io/component-helpers v0.0.0
 	k8s.io/klog/v2 v2.70.1
 	k8s.io/kube-openapi v0.0.0-20220627174259-011e075b9cb8
@@ -63,7 +63,7 @@ require (
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7 // indirect
-	github.com/imdario/mergo v0.3.5 // indirect
+	github.com/imdario/mergo v0.3.7 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
@@ -80,7 +80,7 @@ require (
 	github.com/xlab/treeprint v0.0.0-20181112141820-a009c3971eca // indirect
 	go.starlark.net v0.0.0-20200306205701-8dd3e2ee1dd5 // indirect
 	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
-	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
+	golang.org/x/oauth2 v0.0.0-20220411215720-9780585627b5 // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/time v0.0.0-20220210224613-90d013bbcef8 // indirect
@@ -94,13 +94,35 @@ require (
 )
 
 replace (
+	github.com/imdario/mergo => github.com/imdario/mergo v0.3.5
+	github.com/openshift/api => github.com/soltysh/api v0.0.0-20220721133318-9920c3ceb681
+	github.com/openshift/apiserver-library-go => github.com/soltysh/apiserver-library-go v0.0.0-20220721143050-7efa9d69f5a2
+	github.com/openshift/client-go => github.com/soltysh/client-go v0.0.0-20220721133508-0c49f9851936
+	github.com/openshift/library-go => github.com/soltysh/library-go v0.0.0-20220721134605-8082b849a97e
+	golang.org/x/oauth2 => golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8
 	k8s.io/api => ../api
+	k8s.io/apiextensions-apiserver => ../apiextensions-apiserver
 	k8s.io/apimachinery => ../apimachinery
+	k8s.io/apiserver => ../apiserver
 	k8s.io/cli-runtime => ../cli-runtime
 	k8s.io/client-go => ../client-go
+	k8s.io/cloud-provider => ../cloud-provider
+	k8s.io/cluster-bootstrap => ../cluster-bootstrap
 	k8s.io/code-generator => ../code-generator
 	k8s.io/component-base => ../component-base
 	k8s.io/component-helpers => ../component-helpers
+	k8s.io/controller-manager => ../controller-manager
+	k8s.io/cri-api => ../cri-api
+	k8s.io/csi-translation-lib => ../csi-translation-lib
+	k8s.io/kube-aggregator => ../kube-aggregator
+	k8s.io/kube-controller-manager => ../kube-controller-manager
+	k8s.io/kube-proxy => ../kube-proxy
+	k8s.io/kube-scheduler => ../kube-scheduler
 	k8s.io/kubectl => ../kubectl
+	k8s.io/kubelet => ../kubelet
+	k8s.io/legacy-cloud-providers => ../legacy-cloud-providers
 	k8s.io/metrics => ../metrics
+	k8s.io/mount-utils => ../mount-utils
+	k8s.io/pod-security-admission => ../pod-security-admission
+	k8s.io/sample-apiserver => ../sample-apiserver
 )

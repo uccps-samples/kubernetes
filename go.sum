@@ -349,6 +349,7 @@ github.com/opencontainers/runtime-spec v1.0.3-0.20210326190908-1c3f411f0417 h1:3
 github.com/opencontainers/runtime-spec v1.0.3-0.20210326190908-1c3f411f0417/go.mod h1:jwyrGlmzljRJv/Fgzds9SsS/C5hL+LL3ko9hs6T5lQ0=
 github.com/opencontainers/selinux v1.10.0 h1:rAiKF8hTcgLI3w0DHm6i0ylVVcOrlgR1kK99DRLDhyU=
 github.com/opencontainers/selinux v1.10.0/go.mod h1:2i0OySw99QjzBBQByd1Gr9gSjvuho1lHsJxIJ3gGbJI=
+github.com/openshift/build-machinery-go v0.0.0-20211213093930-7e33a7eb4ce3/go.mod h1:b1BuldmJlbA/xYtdZvKi+7j5YGB44qJUJDZ9zwiNCfE=
 github.com/opentracing/opentracing-go v1.1.0/go.mod h1:UkNAQd3GIcIGf0SeVgPpRdFStlNbqXla1AfSYxPUl2o=
 github.com/peterbourgon/diskv v2.0.1+incompatible h1:UBdAOUP5p4RWqPBg048CAvpKN+vxiaj6gdUUzhl4XmI=
 github.com/peterbourgon/diskv v2.0.1+incompatible/go.mod h1:uqqh8zWWbv1HBMNONnaR/tNboyR3/BZd58JJSHlUSCU=
@@ -390,6 +391,14 @@ github.com/smartystreets/assertions v1.1.0/go.mod h1:tcbTF8ujkAEcZ8TElKY+i30BzYl
 github.com/smartystreets/goconvey v1.6.4/go.mod h1:syvi0/a8iFYH4r/RixwvyeAJjdLS9QV7WQ/tjFTllLA=
 github.com/soheilhy/cmux v0.1.5 h1:jjzc5WVemNEDTLwv9tlmemhC73tI08BNOIGwBOo10Js=
 github.com/soheilhy/cmux v0.1.5/go.mod h1:T7TcVDs9LWfQgPlPsdngu6I6QIoyIFZDDC6sNE1GqG0=
+github.com/soltysh/api v0.0.0-20220721133318-9920c3ceb681 h1:FumydE8i7VhwltG+2oo0fbHDXQaLMLRHewvKXJUSpsc=
+github.com/soltysh/api v0.0.0-20220721133318-9920c3ceb681/go.mod h1:xIKd7EDlPG7kNJGqosOy/7eyfwoKdtqD5WeUegBUuRg=
+github.com/soltysh/apiserver-library-go v0.0.0-20220721143050-7efa9d69f5a2 h1:I0DImDoCz1aT2pnlkeLL9NPHZvFfJj51gMHGLBEhqWA=
+github.com/soltysh/apiserver-library-go v0.0.0-20220721143050-7efa9d69f5a2/go.mod h1:6PwK2EwCSt8buYh9lkWlKhX8uiUJhidKxf/DfKnCyQs=
+github.com/soltysh/client-go v0.0.0-20220721133508-0c49f9851936 h1:I98GMNn+UNCIFrMuXZjyoCZYPByU4efY85RElu+lCSY=
+github.com/soltysh/client-go v0.0.0-20220721133508-0c49f9851936/go.mod h1:zkXcjfSeFv5mpzCVK/zOVNH2bhqJHJ41QyCxn9dlW4g=
+github.com/soltysh/library-go v0.0.0-20220721134605-8082b849a97e h1:C5tKI9nKn0/krhaez17dqyA7mVvUAUvneSYj3AQjMxQ=
+github.com/soltysh/library-go v0.0.0-20220721134605-8082b849a97e/go.mod h1:bPdynZOvv/Bqg/vj/4VDtTZ0hqgwHaEBBfy5EtQQhP0=
 github.com/spf13/afero v1.6.0 h1:xoax2sJ2DT8S8xA2paPFjDCScCNeWsg75VG0DLRreiY=
 github.com/spf13/afero v1.6.0/go.mod h1:Ai8FlHk4v/PARR026UzYexafAt9roJ7LcLMAmO6Z93I=
 github.com/spf13/cobra v1.4.0 h1:y+wJpx64xcgO1V+RcnwW0LEHxTKRi2ZDPSBjWnrg88Q=

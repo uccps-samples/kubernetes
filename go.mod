@@ -58,6 +58,10 @@ require (
 	github.com/onsi/gomega v1.19.0
 	github.com/opencontainers/runc v1.1.3
 	github.com/opencontainers/selinux v1.10.0
+	github.com/openshift/api v0.0.0-20220715133027-dab5b363ebd1
+	github.com/openshift/apiserver-library-go v0.0.0-20220718193426-aa2bfcc66a43
+	github.com/openshift/client-go v0.0.0-20220603133046-984ee5ebedcf
+	github.com/openshift/library-go v0.0.0-20220713145611-ca167a8bd342
 	github.com/pkg/errors v0.9.1
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/prometheus/client_golang v1.12.1
@@ -463,6 +467,11 @@ replace (
 	github.com/opencontainers/runc => github.com/opencontainers/runc v1.1.3
 	github.com/opencontainers/runtime-spec => github.com/opencontainers/runtime-spec v1.0.3-0.20210326190908-1c3f411f0417
 	github.com/opencontainers/selinux => github.com/opencontainers/selinux v1.10.0
+	github.com/openshift/api => github.com/soltysh/api v0.0.0-20220721133318-9920c3ceb681
+	github.com/openshift/apiserver-library-go => github.com/soltysh/apiserver-library-go v0.0.0-20220721143050-7efa9d69f5a2
+	github.com/openshift/build-machinery-go => github.com/openshift/build-machinery-go v0.0.0-20211213093930-7e33a7eb4ce3
+	github.com/openshift/client-go => github.com/soltysh/client-go v0.0.0-20220721133508-0c49f9851936
+	github.com/openshift/library-go => github.com/soltysh/library-go v0.0.0-20220721134605-8082b849a97e
 	github.com/opentracing/opentracing-go => github.com/opentracing/opentracing-go v1.1.0
 	github.com/peterbourgon/diskv => github.com/peterbourgon/diskv v2.0.1+incompatible
 	github.com/pkg/errors => github.com/pkg/errors v0.9.1

@@ -77,7 +77,7 @@ func exitIfErrors(errors []error) {
 	}
 }
 
-//The interface implemented by GinkgoWriter
+// The interface implemented by GinkgoWriter
 type GinkgoWriterInterface interface {
 	io.Writer
 
@@ -103,7 +103,7 @@ You can learn more at https://onsi.github.io/ginkgo/#logging-output
 */
 var GinkgoWriter GinkgoWriterInterface
 
-//The interface by which Ginkgo receives *testing.T
+// The interface by which Ginkgo receives *testing.T
 type GinkgoTestingT interface {
 	Fail()
 }
@@ -168,7 +168,7 @@ func PauseOutputInterception() {
 	outputInterceptor.PauseIntercepting()
 }
 
-//ResumeOutputInterception() - see docs for PauseOutputInterception()
+// ResumeOutputInterception() - see docs for PauseOutputInterception()
 func ResumeOutputInterception() {
 	if outputInterceptor == nil {
 		return
@@ -665,10 +665,10 @@ DeferCleanup can be passed:
 2. A function that returns an error (in which case it will assert that the returned error was nil, or it will fail the spec).
 3. A function that takes arguments (and optionally returns an error) followed by a list of arguments to passe to the function. For example:
 
-    BeforeEach(func() {
-        DeferCleanup(os.SetEnv, "FOO", os.GetEnv("FOO"))
-        os.SetEnv("FOO", "BAR")
-    })
+	BeforeEach(func() {
+	    DeferCleanup(os.SetEnv, "FOO", os.GetEnv("FOO"))
+	    os.SetEnv("FOO", "BAR")
+	})
 
 will register a cleanup handler that will set the environment variable "FOO" to it's current value (obtained by os.GetEnv("FOO")) after the spec runs and then sets the environment variable "FOO" to "BAR" for the current spec.
 
@@ -684,4 +684,19 @@ func DeferCleanup(args ...interface{}) {
 		global.Failer.Fail(message, cl)
 	}
 	pushNode(internal.NewCleanupNode(fail, args...))
+}
+
+func AppendSpecText(test *internal.Spec, text string) {
+	test.AppendText(text)
+}
+
+func GetSuite() *internal.Suite {
+	return global.Suite
+}
+
+func GetSpecs() internal.Specs {
+	global.Suite.BuildTree()
+	tree := global.Suite.GetTree()
+	specs := internal.GenerateSpecsFromTreeRoot(tree)
+	return specs
 }

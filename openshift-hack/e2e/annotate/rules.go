@@ -219,9 +219,6 @@ var (
 		},
 	}
 
-	// labelExcludes temporarily block tests out of a specific suite
-	LabelExcludes = map[string][]string{}
-
 	ExcludedTests = []string{
 		`\[Disabled:`,
 		`\[Disruptive\]`,

@@ -210,7 +210,6 @@ func (c completedConfig) NewWithDelegate(delegationTarget genericapiserver.Deleg
 	}
 
 	s := &APIAggregator{
-<<<<<<< HEAD
 		GenericAPIServer:                genericServer,
 		delegateHandler:                 delegationTarget.UnprotectedHandler(),
 		proxyTransport:                  c.ExtraConfig.ProxyTransport,
@@ -223,20 +222,7 @@ func (c completedConfig) NewWithDelegate(delegationTarget genericapiserver.Deleg
 		openAPIConfig:                   c.GenericConfig.OpenAPIConfig,
 		egressSelector:                  c.GenericConfig.EgressSelector,
 		proxyCurrentCertKeyContent:      func() (bytes []byte, bytes2 []byte) { return nil, nil },
-=======
-		GenericAPIServer:           genericServer,
-		delegateHandler:            delegationTarget.UnprotectedHandler(),
-		proxyTransport:             c.ExtraConfig.ProxyTransport,
-		proxyHandlers:              map[string]*proxyHandler{},
-		handledGroups:              sets.String{},
-		lister:                     informerFactory.Apiregistration().V1().APIServices().Lister(),
-		APIRegistrationInformers:   informerFactory,
-		serviceResolver:            c.ExtraConfig.ServiceResolver,
-		openAPIConfig:              c.GenericConfig.OpenAPIConfig,
-		egressSelector:             c.GenericConfig.EgressSelector,
-		proxyCurrentCertKeyContent: func() (bytes []byte, bytes2 []byte) { return nil, nil },
-		rejectForwardingRedirects:  c.ExtraConfig.RejectForwardingRedirects,
->>>>>>> v1.23.12
+		rejectForwardingRedirects:       c.ExtraConfig.RejectForwardingRedirects,
 	}
 
 	// used later  to filter the served resource by those that have expired.

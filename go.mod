@@ -46,6 +46,7 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/golangplus/testing v0.0.0-20180327235837-af21d9c3145e // indirect
 	github.com/google/cadvisor v0.44.1
+	github.com/google/cel-go v0.10.2 // indirect
 	github.com/google/gnostic v0.5.7-v3refs
 	github.com/google/go-cmp v0.5.5
 	github.com/google/gofuzz v1.1.0
@@ -284,7 +285,7 @@ replace (
 	github.com/gonum/matrix => github.com/gonum/matrix v0.0.0-20181209220409-c518dec07be9
 	github.com/google/btree => github.com/google/btree v1.0.1
 	github.com/google/cadvisor => github.com/google/cadvisor v0.44.1
-	github.com/google/cel-go => github.com/google/cel-go v0.10.1
+	github.com/google/cel-go => github.com/google/cel-go v0.10.2
 	github.com/google/cel-spec => github.com/google/cel-spec v0.6.0
 	github.com/google/gnostic => github.com/google/gnostic v0.5.7-v3refs
 	github.com/google/go-cmp => github.com/google/go-cmp v0.5.5
